@@ -9,12 +9,10 @@ blocks:
     task:
       jobs:
         - name: 'Job #1'
-          commands:
-            - test
+          commands: []
           parallelism: 3
         - name: 'Job #2'
-          commands:
-            - checkout
+          commands: []
         - name: 'Job #3'
           commands:
             - 'false'
