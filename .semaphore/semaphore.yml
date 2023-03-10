@@ -10,8 +10,17 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - checkout
+            - checkin
           parallelism: 3
+        - name: 'Job #2'
+          commands:
+            - checkout
+        - name: 'Job #3'
+          commands:
+            - 'false'
+        - name: 'Job #4'
+          commands:
+            - checkout
     dependencies: []
   - name: 'Pretest #1'
     dependencies: []
@@ -33,6 +42,8 @@ blocks:
     task:
       jobs:
         - name: 'Job #1'
+          commands: []
+        - name: 'Job #2'
           commands: []
 after_pipeline:
   task:
