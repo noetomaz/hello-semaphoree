@@ -14,8 +14,7 @@ blocks:
         - name: 'Job #2'
           commands: []
         - name: 'Job #3'
-          commands:
-            - 'false'
+          commands: []
         - name: 'Job #4'
           commands:
             - checkout
