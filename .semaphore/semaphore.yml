@@ -5,9 +5,42 @@ agent:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: 'Block #1'
+  - name: 'Pretest #2'
     task:
       jobs:
         - name: 'Job #1'
           commands:
             - checkout
+          parallelism: 3
+    dependencies: []
+  - name: 'Pretest #1'
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: Unit Test
+    dependencies:
+      - 'Pretest #1'
+      - 'Pretest #2'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: Integration Test
+    dependencies:
+      - Unit Test
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+after_pipeline:
+  task:
+    jobs:
+      - name: 'Job #1'
+        commands: []
+promotions:
+  - name: Promotion 1
+    pipeline_file: pipeline_2.yml
+    auto_promote:
+      when: branch = 'master' AND result = 'passed'
