@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - checkin
+            - test
           parallelism: 3
         - name: 'Job #2'
           commands:
