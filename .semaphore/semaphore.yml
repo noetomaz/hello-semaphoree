@@ -42,6 +42,14 @@ blocks:
           commands: []
         - name: 'Job #2'
           commands: []
+  - name: 'Block #5'
+    dependencies:
+      - 'Pretest #2'
+      - Unit Test
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
 after_pipeline:
   task:
     jobs:
