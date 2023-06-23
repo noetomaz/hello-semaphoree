@@ -1,6 +1,6 @@
 # hello-semaphore
 For trial
-version: v1.0
+version: v2.0
 name: Initial Pipeline
 agent:
   machine:
