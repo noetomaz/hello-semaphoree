@@ -1,10 +1,10 @@
 # hello-semaphore
 For trial
-version: v1.0
+version: v2.0
 name: Initial Pipeline
 agent:
   machine:
-    type: e1-standard-8
+    type: e1-standard-4
     os_image: ubuntu2004
 blocks:
   - name: 'Pretest #2'
