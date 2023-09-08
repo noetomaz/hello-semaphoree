@@ -5,7 +5,7 @@ name: Initial Pipeline
 agent:
   machine:
     type: e1-standard-4
-    os_image: ubuntu2004
+    os_image: ubuntu2204
 blocks:
   - name: 'Pretest #2'
     task:
