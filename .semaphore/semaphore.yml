@@ -10,12 +10,7 @@ blocks:
   - name: 'Pretest #2'
     task:
       jobs:
-        - name: 'Job #1'
-          commands: []
-          parallelism: 3
         - name: 'Job #2'
-          commands: []
-        - name: 'Job #3'
           commands: []
         - name: 'Job #4'
           commands:
@@ -24,9 +19,7 @@ blocks:
   - name: 'Pretest #1'
     dependencies: []
     task:
-      jobs:
-        - name: 'Job #1'
-          commands: []
+      jobs: []
   - name: Unit Test
     dependencies:
       - 'Pretest #1'
@@ -49,9 +42,7 @@ blocks:
       - 'Pretest #2'
       - Unit Test
     task:
-      jobs:
-        - name: 'Job #1'
-          commands: []
+      jobs: []
 after_pipeline:
   task:
     jobs:
