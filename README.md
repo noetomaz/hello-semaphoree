@@ -62,3 +62,42 @@ promotions:
     pipeline_file: pipeline_2.yml
     auto_promote:
       when: branch = 'master' AND result = 'passed'
+    apiVersion: v1alpha
+kind: Project
+metadata:
+  name: goDemo
+spec:
+  repository:
+    url: "git@github.com:renderedtext/goDemo.git"
+    run_on:
+      - branches
+      - tags
+    pipeline_file: ".semaphore/semaphore.yml"
+    status:
+      pipeline_files:
+        - path: ".semaphore/semaphore.yml"
+          level: "pipeline"
+  tasks:
+    - name: first-scheduler
+      scheduled: true
+      branch: master
+      at: "5 4 * * *"
+      pipeline_file: ".semaphore/cron.yml"
+      status: ACTIVE
+    - name: second-task
+      description: "second-task description"
+      scheduled: false
+      branch: develop
+      at: ""
+      pipeline_file: ".semaphore/canary.yml"
+      status: ACTIVE
+      parameters:
+      - name: CANARY_VERSION
+        required: true
+        default_value: "1.0.0"
+      - name: DEBUG_INFO
+        required: false
+        default_value: "false"
+        options:
+        - "true"
+        - "false"
