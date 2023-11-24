@@ -105,17 +105,17 @@ Explanation potato potato. tomato tomato.
 
 Explanation **“blah blah in black”**.  
 List:
--Potato
--PoTATO
--Tomato
--ToMATO
+-Potato no space
+- PoTATO with space
+- Tomato with space
+ - ToMATO with 2 spaces
 Lalalal
 Lalala
 
 List with numbers (steps):
-1.a
-2.a
-3.a
+1.a with no space
+2. a with one space
+ 3. a with two spaces
 
       - name: DEBUG_INFO
         required: false
