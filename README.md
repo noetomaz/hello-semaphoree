@@ -95,6 +95,28 @@ spec:
       - name: CANARY_VERSION
         required: true
         default_value: "1.0.0"
+
+TRial inserting PR for manual:
+### Title - Main
+
+Explanation potato potato. tomato tomato.
+
+#### Subtitle 
+
+Explanation **“blah blah in black”**.  
+List:
+-Potato
+-PoTATO
+-Tomato
+-ToMATO
+Lalalal
+Lalala
+
+List with numbers (steps):
+1.a
+2.a
+3.a
+
       - name: DEBUG_INFO
         required: false
         default_value: "false"
