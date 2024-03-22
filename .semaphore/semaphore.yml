@@ -42,7 +42,10 @@ blocks:
       - 'Pretest #2'
       - Unit Test
     task:
-      jobs: []
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - sleep 1
 after_pipeline:
   task:
     jobs:
