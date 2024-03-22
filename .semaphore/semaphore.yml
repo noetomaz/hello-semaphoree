@@ -10,8 +10,6 @@ blocks:
   - name: 'Pretest #2'
     task:
       jobs:
-        - name: 'Job #2'
-          commands: []
         - name: 'Job #4'
           commands:
             - checkout
@@ -19,7 +17,10 @@ blocks:
   - name: 'Pretest #1'
     dependencies: []
     task:
-      jobs: []
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - echo "thing"
   - name: Unit Test
     dependencies:
       - 'Pretest #1'
@@ -27,16 +28,16 @@ blocks:
     task:
       jobs:
         - name: 'Job #1'
-          commands: []
+          commands:
+            - echo "stuff"
   - name: Integration Test
     dependencies:
       - Unit Test
     task:
       jobs:
         - name: 'Job #1'
-          commands: []
-        - name: 'Job #2'
-          commands: []
+          commands:
+            - echo "hi"
   - name: 'Block #5'
     dependencies:
       - 'Pretest #2'
@@ -50,7 +51,8 @@ after_pipeline:
   task:
     jobs:
       - name: 'Job #2'
-        commands: []
+        commands:
+          - echo "no"
 promotions:
   - name: Promotion 1
     pipeline_file: pipeline_2.yml
