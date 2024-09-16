@@ -95,6 +95,28 @@ spec:
       - name: CANARY_VERSION
         required: true
         default_value: "1.0.0"
+
+TRial inserting PR for manual:
+### Title - Main
+
+Explanation potato potato. tomato tomato.
+
+#### Subtitle 
+
+Explanation **“blah blah in black”**.  
+List:
+-Potato no space
+- PoTATO with space
+- Tomato with space
+ - ToMATO with 2 spaces
+Lalalal
+Lalala
+
+List with numbers (steps):
+1.a with no space
+2. a with one space
+ 3. a with two spaces
+
       - name: DEBUG_INFO
         required: false
         default_value: "false"
