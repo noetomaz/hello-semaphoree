@@ -95,9 +95,4 @@ spec:
       - name: CANARY_VERSION
         required: true
         default_value: "1.0.0"
-      - name: DEBUG_INFO
-        required: false
-        default_value: "false"
-        options:
-        - "true"
-        - "false"
+        
